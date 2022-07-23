@@ -1,0 +1,298 @@
+/* Start Variables */
+:root {
+    /* Primary Colors */
+    --lime-green: hsl(163, 72%, 41%);
+    --bright-red: hsl(356, 69%, 56%);
+    --facebook: hsl(208, 92%, 53%);
+    --twitter: hsl(203, 89%, 53%);
+    --youtube: hsl(348, 97%, 39%);
+    /* Dark Theme */
+    --very-dark-blue: hsl(230, 17%, 14%);
+    /*(BG)*/
+    --very-dark-blue-pattern: hsl(232, 19%, 15%);
+    /*(Top BG Pattern)*/
+    --dark-desaturated-blue: hsl(228, 28%, 20%);
+    /*(Card BG)*/
+    --card-hover: #333A56;
+    --desaturated-blue: hsl(228, 34%, 66%);
+    /*(Text)*/
+    --white: hsl(0, 0%, 100%);
+    /*(Text)*/
+}
+
+/* End Variables */
+/* Start Global Rules */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--very-dark-blue);
+    position: relative;
+}
+
+body::before {
+    position: absolute;
+    content: "";
+    left: 0px;
+    top: -30px;
+    width: 100%;
+    height: 215px;
+    background-color: var(--very-dark-blue-pattern);
+    border-radius: 0px 0px 15px 15px;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Small */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+/* Medium */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/* Large */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/* End Global Rules */
+.container {
+    min-height: 100vh;
+}
+
+.total {
+    margin-bottom: 40px;
+}
+
+.total h2 {
+    color: var(--white);
+    margin: 30px 0 5px;
+    position: relative;
+}
+
+.total>p {
+    color: var(--desaturated-blue);
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.total .content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.total .content .card {
+    position: relative;
+    background-color: var(--dark-desaturated-blue);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 5px;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.total .content .card::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 4px;
+    left: 0;
+    top: 0;
+}
+
+.total .content .facebook::before {
+    background-color: var(--facebook);
+}
+
+.total .content .twitter::before {
+    background-color: var(--twitter);
+}
+
+.total .content .instagram::before {
+    background-image: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+}
+
+.total .content .youtube::before {
+    background-color: var(--youtube);
+}
+
+.total .content .card .name {
+    color: var(--desaturated-blue);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.total .content .card .number {
+    color: var(--white);
+    font-size: 45px;
+    font-weight: bold;
+}
+
+.total .content .card p {
+    color: var(--desaturated-blue);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.total .content .card .state {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: bold;
+}
+
+.total .content .card .rising {
+    color: var(--lime-green);
+}
+
+.total .content .card .falling {
+    color: var(--bright-red);
+}
+
+.today h2 {
+    color: var(--white);
+    margin-bottom: 25px;
+}
+
+.today .content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.today .content .card {
+    background-color: var(--dark-desaturated-blue);
+    border-radius: 5px;
+    padding: 25px;
+}
+
+.today .content .card .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    color: var(--desaturated-blue);
+    font-weight: bold;
+}
+
+.today .content .card .number {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.today .content .card .number .value {
+    color: var(--white);
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.today .content .card .number .rising,
+.today .content .card .number .falling {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: bold;
+}
+
+.today .content .card .number .rising {
+    color: var(--lime-green);
+}
+
+.today .content .card .number .falling {
+    color: var(--bright-red);
+}
+
+.card {
+    transition: background-color .5s;
+    cursor: pointer;
+}
+
+.card:hover {
+    background-color: var(--card-hover) !important;
+}
+
+/* Start Attribution */
+.attribution {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin: 50px 0;
+}
+
+@media (max-width:573px) {
+    .attribution {
+        gap: 40px;
+    }
+}
+
+.attribution>div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: white;
+}
+
+.attribution>div>a {
+    text-decoration: none;
+    color: var(--desaturated-blue);
+    display: block;
+    border: 1px solid var(--desaturated-blue);
+    padding: 10px 20px;
+    transition: color .5s;
+    border-radius: 6px;
+    position: relative;
+}
+
+.attribution>div>a::before {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 102%;
+    top: 0;
+    left: 0;
+    background-color: var(--desaturated-blue);
+    z-index: -1;
+    border-radius: 6px;
+    transition: width .5s;
+}
+
+.attribution>div>a:hover {
+    color: var(--very-dark-blue);
+    border-color: var(--very-dark-blue);
+}
+
+.attribution>div>a:hover::before {
+    width: 101%;
+}
+
+/* End Attribution */
